@@ -12,13 +12,9 @@ import os
 def CalculatePositions(middleX, middleY, scale, userInputEven, userInputOdd, userInputExceeded, maxAmount):
     distanceToEdge: float = 199 * scale
     minX: float = middleX - distanceToEdge
-    maxX: float = middleX + distanceToEdge
     minY: float = middleY - distanceToEdge
-    maxY: float = middleY + distanceToEdge
     z: float = minY
     i: float = minX
-    black = 0
-    white = 0
     roundtrackerX = 0
     roundtrackerY = 1
     imagePosX = 1
@@ -99,11 +95,10 @@ def CalculatePositions(middleX, middleY, scale, userInputEven, userInputOdd, use
                                   maxAmount))
     panel.bind("<Button-3>",
                lambda event: Zoomout(event, middleX, middleY, scale, userInputEven, userInputOdd, userInputExceeded,
-                                  maxAmount))
+                                     maxAmount))
 
 
 def Zoom(eventorigin, middleX, middleY, scale, userInputEven, userInputOdd, userInputExceeded, maxAmount):
-
     global x, y
     x = eventorigin.x
     y = eventorigin.y
@@ -162,7 +157,6 @@ def Zoom(eventorigin, middleX, middleY, scale, userInputEven, userInputOdd, user
 
 
 def Zoomout(eventorigin, middleX, middleY, scale, userInputEven, userInputOdd, userInputExceeded, maxAmount):
-
     global x, y
     x = eventorigin.x
     y = eventorigin.y
